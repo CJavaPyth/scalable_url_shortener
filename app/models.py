@@ -1,5 +1,5 @@
 from pydantic import BaseModel
 
 
-class ShortenRequest(BaseModel):
+class UrlRequest(BaseModel):
     url: str
