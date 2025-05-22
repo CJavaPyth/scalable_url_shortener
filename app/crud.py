@@ -1,6 +1,6 @@
 from sqlalchemy.orm import Session
-from app.database import URL
-from app.cache import cache_url, get_cached_url
+from database import URL
+from cache import cache_url, get_cached_url
 
 
 # Create and return a shortened URL

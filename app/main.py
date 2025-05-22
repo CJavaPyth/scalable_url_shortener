@@ -2,16 +2,16 @@ from fastapi import FastAPI, Depends, Request, HTTPException
 from sqlalchemy.orm import Session
 
 import crud
-from app.database import get_db, init_db
+from database import get_db, init_db
 import string
 import random
-from app.cache import is_rate_limited
+from cache import is_rate_limited
 from fastapi.staticfiles import StaticFiles
 
 
 app = FastAPI()
 
-app.mount("/", StaticFiles(directory="app/static", html=True), name="static")
+app.mount("/", StaticFiles(directory="static", html=True), name="static")
 
 
 @app.on_event("startup")

@@ -17,9 +17,16 @@ services:
     container_name: my_app
     depends_on:
       - db
+    env_file: .env
     volumes:
       - ./app:/app
 
+  redis:
+    image: redis:7
+    container_name: my_redis
+    restart: always
+    ports:
+      - "6379:6379"
 
   pgadmin:
     image: dpage/pgadmin4
